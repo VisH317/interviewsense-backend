@@ -1,0 +1,4 @@
+ffmpeg
+moviepy
+fastapi[all]==0.99.0
+openai

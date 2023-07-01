@@ -1,4 +1,5 @@
 things i might need to include here:
  - analytics setup
  - background preparation materials
+ - notifications?
  - idk
