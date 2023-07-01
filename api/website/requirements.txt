@@ -2,3 +2,5 @@ fastapi[all]
 openai
 scrapy
 nltk
+dotenv
+pydantic
