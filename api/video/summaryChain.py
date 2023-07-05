@@ -1,0 +1,3 @@
+from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
+from langchain.chains.combine_documents.stuff import StuffDocumentsChain
+
