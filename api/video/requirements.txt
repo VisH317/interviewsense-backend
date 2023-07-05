@@ -5,3 +5,4 @@ openai
 av
 boto3
 python-dotenv
+pydub
