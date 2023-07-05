@@ -3,3 +3,5 @@ moviepy
 fastapi[all]==0.99.0
 openai
 av
+boto3
+python-dotenv
