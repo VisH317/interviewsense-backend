@@ -1,6 +1,4 @@
 import os
-from langchain.chains.combine_documents.map_reduce import MapReduceDocumentsChain
-from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains import LLMChain
 from langchain.prompts import FewShotPromptTemplate, PromptTemplate
 from langchain.llms import OpenAI
@@ -36,7 +34,7 @@ map_prompt = FewShotPromptTemplate(
 )
 
 reduce_prompt = PromptTemplate(
-    "You are a summarizer and information extractor. You are given a list of bullet points about a certain topic and you must take all the bullet point information and create a combined list of bullet points and filter them out based on which ones are most relevant. Remove any redundant information and modify wording as necessary to be as clear as possible.\n\nBullet Info: {information}\n\nSummarized Bullet Point Info: ",
+    "You are a summarizer and information extractor. You are given a list of bullet points about a certain topic and you must take all the bullet point information and create a combined list of bullet points and filter them out based on which ones are most relevant. Remove any redundant information and modify wording as necessary to be as clear as possible.\n\nBullet Info:\n{information}\n\nSummarized Bullet Point Info: ",
     input_variables=["information"]
 )
 
