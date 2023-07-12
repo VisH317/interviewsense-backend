@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI
 from dotenv import load_dotenv
 import openai
@@ -11,8 +12,8 @@ from scraper.scraper.spiders.web import WebSpider, WebItem
 
 
 
-env = load_dotenv("../.env")
-openai.api_key = env['OPENAI_API_KEY']
+load_dotenv("./.env")
+openai.api_key = os.environ['OPENAI_API_KEY']
 
 app = FastAPI()
 

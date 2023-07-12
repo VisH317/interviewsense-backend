@@ -1,6 +1,6 @@
 import scrapy
 import nltk
-from items import WebItem
+from scraper.scraper.items import WebItem
 
 class WebSpider(scrapy.Spider):
     name = 'web'
