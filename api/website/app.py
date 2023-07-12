@@ -6,6 +6,7 @@ import openai
 from scrapy.crawler import CrawlerProcess, Crawler
 from scrapy.utils.project import get_project_settings
 from scrapy import signals
+from scrapy.signalmanager import dispatcher
 
 from pydantic import BaseModel
 from scraper.scraper.spiders.web import WebSpider, WebItem
@@ -32,19 +33,17 @@ class Res(BaseModel):
 async def scrape(info: Req):
 
     print("ENTERING")
-
-    settings = get_project_settings()
     item: WebItem = None
 
     # helper function
-    def updateItem(i, response, spider):
+    def updateItem(signal, sender, i, response, spider):
         global item
         item = i
 
-    process = CrawlerProcess(settings)
-    crawler = Crawler(WebSpider, info.url)
-    crawler.signals.connect(updateItem, signal=signals.item_scraped)
-    process.crawl(crawler)
+    dispatcher.connect(updateItem, signal=signals.item_scraped)
+
+    process = CrawlerProcess(get_project_settings())
+    process.crawl(WebSpider, info.url)
     process.start()
 
     # set up openai smart extraction

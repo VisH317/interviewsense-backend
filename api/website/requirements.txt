@@ -4,3 +4,5 @@ scrapy
 nltk
 python-dotenv
 pydantic
+beautifulsoup4
+langchain
