@@ -16,5 +16,7 @@ map_chain = MapReduceDocumentsChain(
 
 chain = MapReduceChain(
     combine_documents_chain=map_chain,
-    text_splitter=CharacterTextSplitter(separator="\n\n", chunk_size=500, chunk_overlap=50, length_function=len)
+    text_splitter=CharacterTextSplitter(
+        separator="\n\n", chunk_size=500, chunk_overlap=50, length_function=len
+    ),
 )
