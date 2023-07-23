@@ -1,6 +1,7 @@
 import os
 from langchain.chains import LLMChain
 from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 # from langchain.document_loaders import UnstructuredHTMLLoader
 # from langchain.text_splitter import RecursiveCharacterTextSplitter, Language
 from langchain.prompts import FewShotPromptTemplate, PromptTemplate
@@ -8,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-openai = OpenAI(model="gpt-3.5-turbo", openai_api_key=os.environ["OPENAI_API_KEY"], temperature=0.7)
+openai = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=os.environ["OPENAI_API_KEY"], temperature=0.7)
 
 # map_examples = [
 #     {
