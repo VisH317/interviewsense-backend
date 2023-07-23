@@ -49,3 +49,14 @@ prompt = FewShotPromptTemplate(
 )
 
 map_llm = LLMChain(llm=openai, prompt=prompt)
+
+def create_map_llm(job_desc: str):
+    prompt = FewShotPromptTemplate(
+        examples=examples,
+        example_prompt=example_prompt,
+        prefix="You are a summarizer who receives text extracted from a webpage and converts the words into notes consisting of important and key points relating to a specific job description. These notes will be for interview preparation, and all the information you return must contain information relevant to the provided job description. Format your curated information as a list of information where each piece of information is separated by a newline.",
+        suffix="Document info: {doc}\n\nJob Description: " + job_desc + "\n\nOutput:",
+        input_variables=['doc']
+    )
+
+    return LLMChain(llm=openai, prompt=prompt)

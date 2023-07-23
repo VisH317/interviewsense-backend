@@ -27,25 +27,25 @@ openai = ChatOpenAI(model="gpt-3.5-turbo", openai_api_key=os.environ["OPENAI_API
 examples = [
     {
         'doc': "Leonardo Da Vinci was an Italian Polymath\nLeonardo Da Vinci was a painter, engineer, scientist, and many other things",
-        'job_description': "Art historian who studies the art of the Renaissance period",
+        # 'job_description': "Art historian who studies the art of the Renaissance period",
         'output': "<h1>Leonardo Da Vinci</h1><ul><li>Leonardo Da Vinci was an Italian Polymath</li><li>Leonardo Da Vinci was a painter, engineer, scientist, and many other things</li></ul>"
     },
     {
         'doc': "The analytical engine was proposed by Charles Babbage\nIt was the first Turing-complete device\nIt had an arithmetic logic unit, branching, and conditionals",        
-        'job_description': 'Computer historian and computer scientist who catalogues the history of computers',
+        # 'job_description': 'Computer historian and computer scientist who catalogues the history of computers',
         'output': "<h1>Charles Babbage</h1><h2>The analytical engine</h2><ul><li>The analytical engine was proposed by Charles Babbage</li><li>It was the first Turing-complete device</li><li>It had an arithmetic logic unit, branching, and conditionals</li></ul>",
     },
 ]
 
-example_template = "Document info: {doc}\n\nJob Description: {job_description}\n\nOutput:\n{output}"
-example_prompt = PromptTemplate(template=example_template, input_variables=['doc', 'job_description', 'output'])
+example_template = "Document info: {doc}\n\nOutput:\n{output}"
+example_prompt = PromptTemplate(template=example_template, input_variables=['doc', 'output'])
 
 prompt = FewShotPromptTemplate(
     examples=examples,
     example_prompt=example_prompt,
     prefix="You are a summarizer who receives text extracted from a webpage as a newline separated list of information and converts the words into notes consisting of important and key points relating to a specific job description. These notes will be for interview preparation, and all the information you return must contain information relevant to the provided job description. Format your curated information from the source in html format, using things like headers, ordered and unordered lists, bold, italic, underlining, and other stylistic choices for good organization of the notes.",
-    suffix="Document info: {doc}\n\nJob Description: {job_description}\n\nOutput:",
-    input_variables=['doc', 'job_description']
+    suffix="Document info: {doc}\n\nOutput:",
+    input_variables=['doc']
 )
 
 combine_llm = LLMChain(llm=openai, prompt=prompt)
