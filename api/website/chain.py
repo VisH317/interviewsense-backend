@@ -1,4 +1,4 @@
-from prompt import llm
+from api.website.combine import llm
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 # from langchain.document_loaders import 
 from langchain.text_splitter import RecursiveCharacterTextSplitter, Language
