@@ -1,11 +1,9 @@
-import urllib.request
+import requests
+from bs4 import BeautifulSoup
 
 def getHTML(url: str):
-    fp = urllib.request.urlopen(url)
-    bytes = fp.read()
+    fp = requests.get(url).text
+    soup = BeautifulSoup(fp, features="html.parser")
+    text = soup.get_text()
 
-    html = bytes.decode('utf8')
-
-    fp.close()
-
-    return html
+    return "\n".join(line.strip() for line in text.splitlines() if line)

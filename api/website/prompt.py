@@ -27,12 +27,12 @@ examples = [
     {
         'doc': "Leonardo di ser Piero da Vinci[b] (15 April 1452 – 2 May 1519) was an Italian polymath of the High Renaissance who was active as a painter, draughtsman, engineer, scientist, theorist, sculptor, and architect.[3] While his fame initially rested on his achievements as a painter, he also became known for his notebooks, in which he made drawings and notes on a variety of subjects, including anatomy, astronomy, botany, cartography, painting, and paleontology. Leonardo is widely regarded to have been a genius who epitomized the Renaissance humanist ideal,[4] and his collective works comprise a contribution to later generations of artists matched only by that of his younger contemporary, Michelangelo.",
         'job_description': "Art historian who studies the art of the Renaissance period",
-        'output': "<h1>Leonardo Da Vinci</h1><ul><li>Leonardo Da Vinci was an Italian Polymath</li><li>Leonardo Da Vinci was a painter, engineer, scientist, and many other things</li></ul>",
+        'output': "Leonardo Da Vinci was an Italian Polymath\nLeonardo Da Vinci was a painter, engineer, scientist, and many other things",
     },
     {
         'doc': "The analytical engine was a proposed mechanical general-purpose computer designed by English mathematician and computer pioneer Charles Babbage.[2][3] It was first described in 1837 as the successor to Babbage's difference engine, which was a design for a simpler mechanical calculator.[4] The analytical engine incorporated an arithmetic logic unit, control flow in the form of conditional branching and loops, and integrated memory, making it the first design for a general-purpose computer that could be described in modern terms as Turing-complete.",        
         'job_description': 'Computer historian and computer scientist who catalogues the history of computers',
-        'output': "<h1>Charles Babbage</h1><h2>The analytical engine</h2><ul><li>The analytical engine was proposed by Charles Babbage</li><li>It was the first Turing-complete device</li><li>It had an arithmetic logic unit, branching, and conditionals</li></ul>",
+        'output': "The analytical engine was proposed by Charles Babbage\nIt was the first Turing-complete device\nIt had an arithmetic logic unit, branching, and conditionals\n",
     },
 ]
 
