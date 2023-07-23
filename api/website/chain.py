@@ -17,7 +17,7 @@ map_chain = MapReduceDocumentsChain(
 
 chain = MapReduceChain(
     combine_documents_chain=map_chain,
-    text_splitter=RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=20)
+    text_splitter=RecursiveCharacterTextSplitter(chunk_size=4000, chunk_overlap=20)
 )
 
 
