@@ -6,3 +6,5 @@ python-dotenv
 pydantic
 beautifulsoup4
 langchain==0.0.238
+selenium
+webdriver-manager

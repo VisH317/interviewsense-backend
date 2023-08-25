@@ -28,12 +28,12 @@ examples = [
     {
         'doc': "Leonardo Da Vinci was an Italian Polymath\nLeonardo Da Vinci was a painter, engineer, scientist, and many other things",
         # 'job_description': "Art historian who studies the art of the Renaissance period",
-        'output': "<h1>Leonardo Da Vinci</h1><ul><li>Leonardo Da Vinci was an Italian Polymath</li><li>Leonardo Da Vinci was a painter, engineer, scientist, and many other things</li></ul>"
+        'output': "<h1>Leonardo Da Vinci</h1><ul><li><em>Leonardo Da Vinci</em> was an Italian Polymath</li><li>Leonardo Da Vinci was a painter, engineer, scientist, and many other things</li></ul>"
     },
     {
         'doc': "The analytical engine was proposed by Charles Babbage\nIt was the first Turing-complete device\nIt had an arithmetic logic unit, branching, and conditionals",        
         # 'job_description': 'Computer historian and computer scientist who catalogues the history of computers',
-        'output': "<h1>Charles Babbage</h1><h2>The analytical engine</h2><ul><li>The analytical engine was proposed by Charles Babbage</li><li>It was the first Turing-complete device</li><li>It had an arithmetic logic unit, branching, and conditionals</li></ul>",
+        'output': "<h1>Charles Babbage</h1><h2>The <b>analytical engine</b></h2><ul><li>The analytical engine was proposed by Charles Babbage</li><li>It was the first <em>Turing-complete</em> device</li><li>It had an arithmetic logic unit, branching, and conditionals</li></ul>",
     },
 ]
 

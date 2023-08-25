@@ -37,8 +37,8 @@ examples = [
     },
 ]
 
-example_template = "Document info: {doc}\n\nJob Description: {job_description}\n\nOutput:\n{output}"
-example_prompt = PromptTemplate(template=example_template, input_variables=['doc', 'job_description', 'output'])
+example_template = "Document info: {doc}\n\nOutput:\n{output}"
+example_prompt = PromptTemplate(template=example_template, input_variables=['doc', 'output'])
 
 prompt = FewShotPromptTemplate(
     examples=examples,

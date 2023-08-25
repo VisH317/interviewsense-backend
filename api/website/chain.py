@@ -21,5 +21,5 @@ chain = MapReduceChain(
 )
 
 
-def get_chain_output(html: str, desc: str) -> str:
-    return chain.run(input_text=html, job_description=desc)
+def get_chain_output(html: str) -> str:
+    return chain.run(input_text=html)
