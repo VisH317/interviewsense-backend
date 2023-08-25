@@ -52,6 +52,8 @@ async def scrape(info: Req):
 
     # docs = splitter.create_documents([html])
 
-    output = get_chain_output(html, info.job_desc)
+    output = get_chain_output(html)
+
+    print("output: ", output)
 
     return { "url": info.url, "output": output }
