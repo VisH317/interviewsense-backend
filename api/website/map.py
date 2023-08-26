@@ -43,7 +43,7 @@ example_prompt = PromptTemplate(template=example_template, input_variables=['doc
 prompt = FewShotPromptTemplate(
     examples=examples,
     example_prompt=example_prompt,
-    prefix="You are a summarizer who receives text extracted from a webpage and converts the words into notes consisting of important and key points separated by new lines. Format your curated information as a list of information where each piece of information is separated by a newline.",
+    prefix="You are a summarizer who receives text extracted from a webpage and converts the words into notes consisting of important and key points separated by new lines. Format your curated information as a list of information where each piece of information is separated by a newline. If the text has no important or relevant information, respond with \"No relevant information\"",
     suffix="Document info: {doc}\n\nOutput:",
     input_variables=['doc']
 )
