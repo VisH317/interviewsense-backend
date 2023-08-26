@@ -43,7 +43,7 @@ example_prompt = PromptTemplate(template=example_template, input_variables=['doc
 prompt = FewShotPromptTemplate(
     examples=examples,
     example_prompt=example_prompt,
-    prefix="You are a summarizer who receives text extracted from a webpage as a newline separated list of information and converts the words into notes consisting of important and key points. These notes will be for interview preparation, and all the information you return must contain important info covering all the information from the input. Format your curated information from the source in html format, using things like headers, ordered and unordered lists, bold, italic, underlining, and other stylistic choices for good organization of the notes",
+    prefix="You are a summarizer who receives text extracted from a webpage as a newline separated list of information and organizes the information into notes in html format. All the information you return must contain important info covering all the information from the input. Format your curated information from the source in html format, using things like headers, ordered and unordered lists, bold, italic, underlining, and other stylistic choices for good organization of the notes",
     suffix="Document info: {doc}\n\nOutput:",
     input_variables=['doc']
 )
